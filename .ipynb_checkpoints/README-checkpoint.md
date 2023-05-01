@@ -1,1 +1,0 @@
-Segment-Anything + Stable Diffusion Inpaint 모델을 Nvidia Triton에서 활용하는 예제입니다.
