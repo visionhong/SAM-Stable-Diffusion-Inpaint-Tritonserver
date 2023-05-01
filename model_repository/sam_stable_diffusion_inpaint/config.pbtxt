@@ -1,0 +1,58 @@
+name: "sam_stable_diffusion_inpaint"
+backend: "python"
+max_batch_size: 0
+
+input [
+    {
+        name: "PROMPT"
+        data_type: TYPE_STRING
+        dims: [ -1 ]
+    },
+    {
+        name: "NEGATIVE_PROMPT"
+        data_type: TYPE_STRING
+        dims: [ -1 ]
+    },
+    {
+        name: "SAMPLES"
+        data_type: TYPE_INT32
+        dims: [ -1 ]
+    },
+    {
+        name: "STEPS"
+        data_type: TYPE_INT32
+        dims: [ -1 ]
+    },
+    {
+        name: "GUIDANCE_SCALE"
+        data_type: TYPE_FP32
+        dims: [ -1 ]
+    },
+    {
+        name: "SEED"
+        data_type: TYPE_INT64
+        dims: [ -1 ]
+    },
+    {
+        name: "POS_COORDS"
+        data_type: TYPE_INT64
+        dims: [ -1, 2 ]
+    },
+    {
+        name: "NEG_COORDS"
+        data_type: TYPE_INT64
+        dims: [ -1, 2 ]
+    },
+    {
+        name: "IMAGE"
+        data_type: TYPE_UINT8
+        dims: [ -1, -1, 3 ]
+    }
+]
+output [
+    {
+        name: "IMAGES"
+        data_type: TYPE_FP16
+        dims: [ -1 , -1, -1, -1]
+    }
+]

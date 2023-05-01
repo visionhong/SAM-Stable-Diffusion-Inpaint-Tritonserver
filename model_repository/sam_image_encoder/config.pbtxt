@@ -1,0 +1,17 @@
+name: "sam_image_encoder"
+platform: "tensorrt_plan"
+max_batch_size : 0
+input [
+  {
+    name: "inputs"
+    data_type: TYPE_FP32
+    dims: [ -1, 3, 1024, 1024 ]
+  }
+]
+output [
+  {
+    name: "outputs"
+    data_type: TYPE_FP32
+    dims: [ -1, 256, 64, 64 ]
+  }
+]
