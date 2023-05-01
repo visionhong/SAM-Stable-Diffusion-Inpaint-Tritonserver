@@ -1,0 +1,28 @@
+name: "unet"
+platform: "tensorrt_plan"
+max_batch_size : 0
+
+input [
+  {
+    name: "sample"
+    data_type: TYPE_FP16
+    dims: [ -1, 9, 64, 64 ]
+  },
+  {
+    name: "timestep"
+    data_type: TYPE_FP16
+    dims: [ 1 ]
+  },
+  {
+    name: "encoder_hidden_states"
+    data_type: TYPE_FP16
+    dims: [ -1, 77, 1024 ]
+  }
+]
+output [
+  {
+    name: "out_sample"
+    data_type: TYPE_FP16
+    dims: [ -1, 4, 64, 64 ]
+  }
+]
